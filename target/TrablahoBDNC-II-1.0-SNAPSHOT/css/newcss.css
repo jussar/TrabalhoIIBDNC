@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09/03/2018, 15:56:53
+    Author     : Jussara
+*/
+.titulos{
+    color: black;
+}
+.tamanhocar{
+    height: 30%;
+}
+.conteudo{
+    width: 50%;
+    background: beige;
+    left: 30px;
+    border-right: 2px solid orangered;
+    width: 70%;
+    height: 578px;
+    
+}
+.corpo{
+   background-color:beige;
+}
+
+.transbox {
+    
+    background-color: #ffffff;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+    width: 70%;
+    height: 100%;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    
+}
+.menu{
+    border-top: 3px solid orangered;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    margin-bottom: 2%;
+}
+/*CSS DO SLIDER AQUI*/
+.cordocarosel{
+   
+    border-top: solid 2px orangered;
+}
