@@ -10,5 +10,7 @@ package br.edu.ifpb.forum.usuario;
  * @author Jussara
  */
 public class Usuario {
-    
+    private String nome;
+    private String email;
+    private String senha;
 }
