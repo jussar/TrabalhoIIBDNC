@@ -12,4 +12,11 @@ package br.edu.ifpb.forum.topicos;
 public class Topico {
     private String texto;
     private String titulo;
+
+    public Topico(String texto, String titulo) {
+        this.texto = texto;
+        this.titulo = titulo;
+    }
+    
+    
 }
