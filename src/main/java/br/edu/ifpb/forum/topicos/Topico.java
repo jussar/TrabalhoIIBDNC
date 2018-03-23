@@ -10,5 +10,6 @@ package br.edu.ifpb.forum.topicos;
  * @author Jussara
  */
 public class Topico {
-    
+    private String texto;
+    private String titulo;
 }
