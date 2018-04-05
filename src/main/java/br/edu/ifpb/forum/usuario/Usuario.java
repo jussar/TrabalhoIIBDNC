@@ -9,6 +9,7 @@ import br.edu.ifpb.forum.bancos.postgre.Conecxao;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -30,6 +31,7 @@ public class Usuario {
     private String senha;
     private Conecxao conn;
     PreparedStatement stat;
+    ResultSet rs;
 
     public Usuario() {
     }
@@ -58,11 +60,16 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public void login() throws SQLException {
-
-        conn = new Conecxao();
-        stat = conn.init().prepareStatement("select * from usuario where email= " + email + " and senha= " + senha + " );");
-
+    public void logar(){
+        
+        try {
+            stat = conn.init().prepareStatement("select * from usuario where email = ? and senha = ?");
+            stat.setString(1, getEmail());
+            stat.setString(2, getSenha());
+            rs = stat.executeQuery();
+            
+        } catch (Exception e) {
+        }
     }
 
     public void inserirusuario() throws SQLException {
