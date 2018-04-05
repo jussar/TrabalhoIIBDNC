@@ -5,19 +5,33 @@
  */
 package br.edu.ifpb.forum.usuario;
 
+import br.edu.ifpb.forum.bancos.postgre.Conecxao;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+
 /**
  *
  * @author Jussara
  */
+@ManagedBean
+@SessionScoped
 public class Usuario {
+
     private String nome;
     private String email;
     private String senha;
+    private Conecxao conn;
+    PreparedStatement stat;
 
-    public Usuario(String nome, String email, String senha) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
+    public Usuario() {
     }
 
     public String getNome() {
@@ -43,8 +57,22 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    public void login(Usuario x){
-        
+
+    public void login() throws SQLException {
+
+        conn = new Conecxao();
+        stat = conn.init().prepareStatement("select * from usuario where email= " + email + " and senha= " + senha + " );");
+
     }
-    
+
+    public void inserirusuario() throws SQLException {
+        conn = new Conecxao();
+        stat = conn.init().prepareStatement("INSERT INTO usuario(nome,email,senha) values(?,?,?);");
+        stat.setString(1, getNome());
+        stat.setString(2, getEmail());
+        stat.setString(3, getSenha());
+        
+        stat.execute();
+       
+    }
 }
