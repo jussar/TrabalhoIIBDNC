@@ -116,8 +116,8 @@
                         <p:password placeholder="Senha" styleClass="form-control" value="#{usuario.senha}"></p:password>
                     </div> 
                 </div>
-                <p:commandButton type="submit" styleClass="btn btn-primary" icon="ui-icon-star" value="Cadastrar" action="#{usuario.login()}"></p:commandButton>
-
+                <p:commandButton type="submit"  styleClass="btn btn-primary" icon="ui-icon-star" value="Cadastrar" action="#{usuario.logar()}"></p:commandButton>
+               
             </h:form>
 
         </center>
@@ -167,8 +167,9 @@
                         <p:password placeholder="Senha" styleClass="form-control" value="#{usuario.senha}"></p:password>
                     </div> 
                 </div>
-                <p:commandButton styleClass="btn btn-primary"  icon="ui-icon-star" value="Cadastrar" action="#{usuario.inserirusuario()}"></p:commandButton>
-
+                <p:commandButton type="submit" styleClass="btn btn-primary"  icon="ui-icon-star" value="Cadastrar" action="#{usuario.inserirusuario()}"></p:commandButton>
+                <br></br>
+                
             </h:form>
 
         </center>

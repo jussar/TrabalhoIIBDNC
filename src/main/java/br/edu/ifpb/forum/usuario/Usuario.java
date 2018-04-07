@@ -14,9 +14,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,7 +32,7 @@ public class Usuario {
     private String email;
     private String senha;
     private Conecxao conn;
-    PreparedStatement stat;
+    PreparedStatement stat= null;
     ResultSet rs;
 
     public Usuario() {
@@ -60,26 +62,37 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public void logar(){
-        
+    public void logar() throws SQLException {
+
         try {
+            conn = new Conecxao();
             stat = conn.init().prepareStatement("select * from usuario where email = ? and senha = ?");
             stat.setString(1, getEmail());
             stat.setString(2, getSenha());
+            stat.execute();
             rs = stat.executeQuery();
-            
+            if(rs.next()){
+                FacesContext.getCurrentInstance().getExternalContext().redirect("pag_usuario.xhtml");
+            }else{
+                 FacesContext context = FacesContext.getCurrentInstance();
+                context.addMessage(null, new FacesMessage("Error", "usuario invalido")); 
+            }    
         } catch (Exception e) {
         }
     }
 
-    public void inserirusuario() throws SQLException {
+    public void inserirusuario() throws SQLException, IOException {
         conn = new Conecxao();
         stat = conn.init().prepareStatement("INSERT INTO usuario(nome,email,senha) values(?,?,?);");
         stat.setString(1, getNome());
         stat.setString(2, getEmail());
         stat.setString(3, getSenha());
-        
-        stat.execute();
-       
+        if (stat.execute() == true) {
+            FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null, new FacesMessage("Error", "usuario invalido"));
+            
+        } else {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("pag_usuario.xhtml");
+        }
     }
 }
