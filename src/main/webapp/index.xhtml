@@ -17,6 +17,8 @@
 
     </h:head>
     <h:body styleClass="corpo">
+        <p:messages showDetail="true" showIcon="false" closable="true" showSummary="false" autoUpdate="false"/>
+                
 
         <nav class="navbar navbar-expand-lg  badge-dark  menu">
             <a class="navbar-brand" href="#">
@@ -86,7 +88,7 @@
             <h:form styleClass="form-control align-items-center badge-dark">
 
                 <div class="navbar justify-content-between">
-                    <a class="navbar-brand">Login</a>
+                    <a class="navbar-brand">Login </a>
                     <div class="form-inline">
 
                         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
@@ -101,7 +103,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">@</div>
                         </div>
-                        <p:inputText styleClass="form-control" placeholder="Email" value="#{usuario.email}"></p:inputText>
+                        <p:inputText styleClass="form-control" placeholder="Email" value="#{usuarioControle.usuario.email}"></p:inputText>
                     </div> 
                 </div>
 
@@ -113,10 +115,10 @@
                                 <i class="fas fa-unlock"></i>
                             </div>
                         </div>
-                        <p:password placeholder="Senha" styleClass="form-control" value="#{usuario.senha}"></p:password>
+                        <p:password placeholder="Senha" styleClass="form-control" value="#{usuarioControle.usuario.senha}"></p:password>
                     </div> 
                 </div>
-                <p:commandButton type="submit"  styleClass="btn btn-primary" icon="ui-icon-star" value="Cadastrar" action="#{usuario.logar()}"></p:commandButton>
+                <p:commandButton type="submit"  styleClass="btn btn-primary" icon="ui-icon-star" value="Entrar" action="#{usuarioControle.login()}"></p:commandButton>
                
             </h:form>
 
@@ -140,7 +142,7 @@
                         <div class="input-group-prepend">
                             <div class="input-group-text">@</div>
                         </div>
-                        <p:inputText styleClass="form-control" placeholder="Email" value="#{usuario.email}"></p:inputText>
+                        <p:inputText styleClass="form-control" placeholder="Email" value="#{usuarioControle.usuario.email}"></p:inputText>
                     </div> 
                 </div>
 
@@ -152,7 +154,7 @@
                                 <i class="fas fa-users"></i>
                             </div>
                         </div>
-                        <p:inputText styleClass="form-control" placeholder="Nome de Usuario" value="#{usuario.nome}" ></p:inputText>
+                        <p:inputText styleClass="form-control" placeholder="Nome de Usuario" value="#{usuarioControle.usuario.nome}" ></p:inputText>
                     </div> 
                 </div>
 
@@ -164,7 +166,7 @@
                                 <i class="fas fa-unlock"></i>
                             </div>
                         </div>
-                        <p:password placeholder="Senha" styleClass="form-control" value="#{usuario.senha}"></p:password>
+                        <p:password placeholder="Senha" styleClass="form-control" value="#{usuarioControle.usuario.email}"></p:password>
                     </div> 
                 </div>
                 <p:commandButton type="submit" styleClass="btn btn-primary"  icon="ui-icon-star" value="Cadastrar" action="#{usuario.inserirusuario()}"></p:commandButton>

@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpb.forum.bancos.postgre;
+package br.edu.ifpb.forum.bancos;
 
-import static com.sun.org.glassfish.external.amx.AMXUtil.prop;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -35,10 +33,11 @@ public class Conecxao {
             Class.forName("org.postgresql.Driver");
             return connection = DriverManager.getConnection(url, user, password);
         } catch (Exception e) {
+            System.err.println("erro conexao "+e.getMessage());
         }
-                   
+          return null;
       
-        return null;
+        
     }
     public   void fecharConexao(Connection c) throws SQLException{
         c.close();

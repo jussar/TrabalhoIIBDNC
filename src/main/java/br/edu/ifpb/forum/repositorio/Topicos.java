@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifpb.forum.topicos;
+package br.edu.ifpb.forum.repositorio;
 
 /**
  *
  * @author Jussara
  */
-public class Topico {
+public class Topicos {
     private String texto;
     private String titulo;
 
-    public Topico(String texto, String titulo) {
+    public Topicos(String texto, String titulo) {
         this.texto = texto;
         this.titulo = titulo;
     }

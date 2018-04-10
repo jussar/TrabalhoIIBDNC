@@ -10,10 +10,9 @@
 
 create table usuario(
 
-id SERIAL,
-email varchar(20),
-nome varchar(20),
-senha varchar(20),
-primary key (senha)
+id SERIAL PRIMARY KEY,
+email varchar(60) NOT NULL UNIQUE,
+nome varchar(60) NOT NULL UNIQUE,
+senha varchar(20) NOT NULL UNIQUE
 
 );
