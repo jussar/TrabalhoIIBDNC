@@ -50,7 +50,7 @@ public class UsuarioControle implements Serializable{
             usuario = result;
             mensagem.addMessage ("Bem vindo "+usuario.getNome()+"!");
              FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", usuario);
-            return "home?faces-redirect=true";
+            return "pag_usuario?faces-redirect=true";
         } else {
             mensagem.addMessage("Usuário ou senha inválido");
            

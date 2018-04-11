@@ -20,9 +20,10 @@ public class UsuarioServico {
     @Inject
     private Usuarios repositorio;
     public void salvar(Usuario usuario) throws SQLException{
-        repositorio.inserirusuario(usuario);
+        repositorio.salvar(usuario);
     }
     public Usuario login(String email, String senha) throws SQLException{
-        return repositorio.logar(email, senha);
+
+        return repositorio.login(email, senha);
     }
 }

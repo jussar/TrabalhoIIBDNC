@@ -5,19 +5,29 @@
  */
 package br.edu.ifpb.forum.entidades;
 
+import java.io.Serializable;
 import javax.enterprise.context.Dependent;
 import javax.inject.Named;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  *
  * @author Jussara
  */
-@Named
-@Dependent
-public class Usuario {
+
+@Entity
+public class Usuario implements Serializable {
+    @Id
+    @GeneratedValue
     private int id;
+    @Column(length = 60,nullable = false,unique = true)
     private String nome;
+    @Column(length = 60,nullable = false,unique = true)
     private String email;
+    @Column(length = 20,nullable = false,unique = true)
     private String senha;
 
     public Usuario() {

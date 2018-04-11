@@ -15,8 +15,8 @@ import java.sql.SQLException;
 public class NewClass {
     private static final Usuarios usuarios = new Usuarios();
     public static void main(String[] args) throws SQLException {
-        Usuario u = Usuario.of("uuffuf", "eee", "1234332");
-        Usuario c = usuarios.logar(u.getEmail(), u.getSenha());
-        System.err.println("rrrru " +c);
+        Usuario u = Usuario.of("ool", "eee", "21");
+         usuarios.salvar(u);
+        
     }
 }
