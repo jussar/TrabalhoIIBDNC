@@ -37,10 +37,12 @@ public class UsuarioControle implements Serializable{
             servico.salvar(usuario);
             mensagem.addMessage("Usuario salvo com sucesso");
             this.usuario = new Usuario();
+             FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", usuario);
+             return "pag_usuario?faces-redirect=true";
         } catch (Exception e) {
             mensagem.addMessage("Erro ou salvar ");
         }
-        return null;
+         return   "404?faces-redirect=true";
     }
      public String login() throws SQLException {
          
@@ -54,7 +56,7 @@ public class UsuarioControle implements Serializable{
         } else {
             mensagem.addMessage("Usuário ou senha inválido");
            
-            return null;
+            return   "404?faces-redirect=true";
         }
     }
      public String logout() {
