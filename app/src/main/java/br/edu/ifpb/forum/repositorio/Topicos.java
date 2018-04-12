@@ -5,34 +5,22 @@
  */
 package br.edu.ifpb.forum.repositorio;
 
+import br.edu.ifpb.forum.entidades.Topico;
+import java.util.List;
+
+
+
 /**
  *
- * @author Jussara
+ * @author jose
  */
-public class Topicos {
-    private String texto;
-    private String titulo;
+public interface Topicos {
 
-    public Topicos(String texto, String titulo) {
-        this.texto = texto;
-        this.titulo = titulo;
-    }
+    public Topico buscar(String testo);
+    public Topico buscar(int id);
+    public List<Topico> buscarTodos();
 
-    public String getTexto() {
-        return texto;
-    }
-
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    
+    public void salvar(Topico t);
+    public void remover(Topico t);
     
 }

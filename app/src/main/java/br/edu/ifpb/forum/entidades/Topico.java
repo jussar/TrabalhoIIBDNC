@@ -20,13 +20,29 @@ public class Topico {
     private String titulo;
     private List<Comentario> comentarios;
     private LocalDate data;
+    private Categoria categoria;
 
-    public Topico(String texto, String titulo, List<Comentario> comentarios, LocalDate data) {
+    public Topico() {
+    }
+
+    public Topico(int id, String texto, String titulo, LocalDate data, Categoria categoria) {
+        this.id = id;
         this.texto = texto;
         this.titulo = titulo;
-        this.comentarios = comentarios;
         this.data = data;
+        this.categoria = categoria;
     }
+
+  
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+    
 
     public int getId() {
         return id;

@@ -42,5 +42,60 @@ and open the template in the editor.
                 </ul>
             </div>
         </nav>
+      
+        </center>
+
+        <center class="container col-5"  id="centercriarTopico">
+
+            <h:form styleClass="form-control align-items-center badge-dark">
+                <div class="navbar justify-content-between">
+                    <a class="navbar-brand">Cadastro</a>
+                    <div class="form-inline">
+
+                        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div><br></br>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Titulo</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">@</div>
+                        </div>
+                        <p:inputText styleClass="form-control" placeholder="Email" value="#{topicoControle.topico.titulo}"></p:inputText>
+                    </div> 
+                </div>
+
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Texto</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <p:inputTextarea styleClass="form-control" placeholder="Nome de Usuario" value="#{topicoControle.topico.texto}"/> 
+                    </div> 
+                </div>
+
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Senha</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fas fa-unlock"></i>
+                            </div>
+                        </div>
+                        <p:password placeholder="Senha" styleClass="form-control" value="#{usuarioControle.usuario.senha}"></p:password>
+                    </div> 
+                </div>
+                <p:commandButton type="submit" styleClass="btn btn-primary"  icon="ui-icon-star" value="Cadastrar" action="#{usuarioControle.salvar()}"></p:commandButton>
+                <br></br>
+                
+            </h:form>
+
+        </center>
+
     </h:body>
 </html>

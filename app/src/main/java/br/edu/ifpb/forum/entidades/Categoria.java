@@ -5,40 +5,12 @@
  */
 package br.edu.ifpb.forum.entidades;
 
-import java.util.Collections;
-import java.util.List;
-
 /**
  *
  * @author jose
  */
-public class Categoria {
-      private String tecnologia;
-      private List<Topico> topicos;
-
-    public Categoria() {
-    }
-
-    public String getTecnologia() {
-        return tecnologia;
-    }
-
-    public void setTecnologia(String tecnologia) {
-        this.tecnologia = tecnologia;
-    }
-
-    public List<Topico> getTopicos() {
-        return Collections.unmodifiableList(topicos);
-    }
-
-    public void setTopicos(List<Topico> topicos) {
-        this.topicos = topicos;
-    }
-    public void addTopicos(Topico topico) {
-        this.topicos.add(topico);
-    }
-    public void removeTopicos(Topico topico) {
-        this.topicos.remove(topico);
-    }
+public enum Categoria {
+    
+    JAVA, HTML,NODEJS, ANGULAR, JSF,JPA, DOCKER, POSTGRESQL,MONGODB, NEO4J
       
 }

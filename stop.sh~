@@ -1,8 +1,0 @@
-mvn clean
-docker-compose down
-
-docker rm   appJSforum
-docker rm   BDJSforum
-docker rmi  jose/JSforumApp
-docker rmi  jose/JSforumBD
-
